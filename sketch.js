@@ -13,6 +13,15 @@ function setup() {
 
 function draw() {
   background(255,255,255);  
+  if (keyDown("r")&&car.collide(wall)){
+    speed = random(55,90)
+    weight = random(400,1500)
+    car.x = 100
+    car.velocityX = speed
+    deformation = 0
+    teext = "blank"
+  }
+    
   if (car.collide(wall)) {
     car.velocityX = 0
     deformation = 0.5*weight*speed*speed/22509
